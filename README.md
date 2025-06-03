@@ -26,6 +26,7 @@
 8. [Utility Functions](#8-utility-functions)
     * [Await: `Chemical.Await()`](#chemical-await)
     * [Destroy: `Chemical.Destroy()`](#chemical-destroy)
+    * [Nothing: `Chemical.Nothing()`](#chemical-nothing)
 9. [Under The Hood (Advanced)](#9-under-the-hood-advanced)
     * [Networking (`Suphi Packet`)](#networking-packagespacket)
 10. [Type System](#10-type-system)
@@ -732,6 +733,10 @@ Router:exit("/home") -- homePageElement becomes false
   * Functions: Calls the function (intended for disconnect functions).
   * Threads: Calls `task.cancel(thread)`.
   * Tables: Recurscively calls `Chemical.Destroy(Table)`.
+
+### Chemical Nothing
+* **`Chemical.Nothing()`**
+  As the name implies, it does nothing. This can be useful when you want to specify that the cleanup of a Computed or Iterator should do nothing.
 
 ## 9. Under The Hood (Advanced)
 
