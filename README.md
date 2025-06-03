@@ -198,12 +198,13 @@ The different between `Element` and `Value` is that `Element`s have reactive par
 
 ```lua
 local Chemical = require(path.to.Chemical)
+local router = Chemical.Router()
 local settingsPageElement = Chemical.Element()
 
 -- In UI Creation:
 -- Visible = settingsPageElement,
 
-    routher:paths({
+    router:paths({
         {Path = "/settings", Element = settingsPageElement}
     })
 
