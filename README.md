@@ -1,6 +1,6 @@
 # Chemical - Reactive State & UI Framework for Roblox Luau
 
-**Version:** 0.1.0b ALPHA (as of 6/1/2025, per comments)
+**Version:** 0.1.0b ALPHA (as of 6/3/2025, per comments)
 **Author:** Sovereignty (Discord: sov_dev)
 
 ## Table of Contents
