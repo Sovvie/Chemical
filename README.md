@@ -199,7 +199,7 @@ The different between `Element` and `Value` is that `Element`s have reactive par
 
 ```lua
 local Chemical = require(path.to.Chemical)
-local router = Chemical.Router()
+local router = Chemical.Router
 local settingsPageElement = Chemical.Element()
 
 -- In UI Creation:
@@ -273,7 +273,7 @@ userProfile:key("score", 200)
 ```lua
     local Chemical = require(path.to.Chemical)
 
-    local router = Chemical.Router()
+    local router = Chemical.Router
     local someElement = Chemical.Element()
 
     router:paths({
@@ -445,7 +445,7 @@ All connections made via these traits are automatically disconnected when the Gu
 
 ### Reaction Server-Side API
 
-Accessible via `local Reaction = Chemical.Reaction()`.
+Accessible via `local Reaction = Chemical.Reaction`.
 
 * `Reaction:create(channelName: string, reactionKeyName: string, initialState: table): ServerReactionAPI`:
   * Creates a new reaction on the server and broadcasts its construction to all clients.
@@ -459,9 +459,8 @@ Accessible via `local Reaction = Chemical.Reaction()`.
 Accessible via `local Reaction = Chemical.Reaction()`.
 
 * `Reaction:await(channelName: string, reactionKeyName: string): Promise<ClientReaction>`:
-  * Returns a `Promise` that resolves with the client-side reaction object once it has been constructed (either through initial hydration or a `ConstructReaction` packet).
+  * Returns with the client-side reaction object once it has been constructed (either through initial hydration or a `ConstructReaction` packet).
   * The resolved `ClientReaction` object mirrors the structure of the server's `initialState`, where server-side `Chemical.Value`/`Chemical.Computed` instances become client-side `Chemical.Value` instances. Static values remain static.
-  * It's recommended to use `:expect()` on the promise if you are certain the reaction should exist, to automatically error if it doesn't resolve.
 * `Reaction:onCreate(channelName: string, callback: (reactionKeyName: string, reactionObject: ClientReaction) -> ()): () -> ()`:
   * Subscribes to creations of new reactions within the specified `channelName`.
   * The `callback` is invoked immediately for any already existing reactions in that channel, and then for any new ones as they are constructed.
@@ -478,7 +477,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 local Chemical = require(ReplicatedStorage.Chemical)
 
-local Reaction = Chemical.Reaction() -- Get the singleton instance
+local Reaction = Chemical.Reaction -- Get the singleton instance
 
 Players.PlayerAdded:Connect(function(player)
     -- Define initial state, some parts reactive, some static
@@ -526,7 +525,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 local Chemical = require(ReplicatedStorage.Chemical)
 
-local Reaction = Chemical.Reaction() -- Get the singleton instance
+local Reaction = Chemical.Reaction -- Get the singleton instance
 local Create = Chemical.Create
 local localPlayer = Players.LocalPlayer
 
@@ -605,7 +604,7 @@ The `Chemical.Router` is a singleton service for managing client-side applicatio
 
 **API:**
 
-* `Chemical.Router(): RouterInstance`: Gets the singleton router instance.
+* `Chemical.Router: RouterInstance`: Gets the singleton router instance.
 * `router:paths(routes: {{ Path: string, Element: Chemical.Element, Persistent?: boolean }})`: Defines a set of routes.
   * `Path`: A string like "/shop/items" or "/profile". Leading/trailing slashes are handled.
   * `Element`: The `Chemical.Element` instance that will be set to `true` when this path is active.
@@ -632,7 +631,7 @@ local Watch = Chemical.Watch
 local Ref = Chemical.Ref
 local PlayerGui = game.Players.LocalPlayer.PlayerGui
 
-local Router = Chemical.Router() -- Get the singleton instance
+local Router = Chemical.Router -- Get the singleton instance
 
 -- Define Elements for different pages/views
 local tutorialPageElement = Chemical.Element()
