@@ -28,7 +28,7 @@
     * [Destroy: `Chemical.Destroy()`](#chemical-destroy)
     * [Nothing: `Chemical.Nothing()`](#chemical-nothing)
 9. [Under The Hood (Advanced)](#9-under-the-hood-advanced)
-    * [Networking (`Suphi Packet`)](#networking-packagespacket)
+    * [Networking (`Suphi Packet`)](#networking)
 10. [Type System](#10-type-system)
 11. [Examples](#11-examples)
 
@@ -740,7 +740,7 @@ Router:exit("/home") -- homePageElement becomes false
 
 ## 9. Under The Hood (Advanced)
 
-### Networking (`Packages.Packet`)
+### Networking
 
 The `Chemical.Reaction` system leverages these `Packet` definitions for its `Construct`, `Deconstruct`, `UpdateRoot`, `UpdateNested`, `Ready`, and `Hydrate` operations.
 
