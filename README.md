@@ -18,11 +18,11 @@
     * [Create: `Chemical.Create()`](#chemicalcreate)
     * [Give: `Chemical.Give()`](#chemicalgive)
     * [UI Traits: `Ref`, `onEvent`, `onChange`](#ui-traits)
-6. [State Replication (`Chemical.Reaction`)](#6-state-replication-chemical-reaction)
+6. [State Replication (`Chemical.Reaction`)](#6-state-replication)
     * [Server-Side API](#reaction-server-side-api)
     * [Client-Side API](#reaction-client-side-api)
     * [Example Usage](#reaction-example-usage)
-7. [Client-Side Routing (`Chemical.Router`)](#7-client-side-routing-chemical-router)
+7. [Client-Side Routing (`Chemical.Router`)](#7-client-side-routing)
 8. [Utility Functions](#8-utility-functions)
     * [Await: `Chemical.Await()`](#chemical-await)
     * [Destroy: `Chemical.Destroy()`](#chemical-destroy)
@@ -417,7 +417,7 @@ Special keys used within the `propertyTable` of `Create` and `Give` to add speci
 
 All connections made via these traits are automatically disconnected when the GuiObject they are attached to is destroyed (via `instance:Destroy()` or `Chemical.Destroy()`).
 
-## 6. State Replication (`Chemical.Reaction`)
+## 6. State Replication
 
 `Chemical.Reaction` is a singleton service that automates the synchronization of state between the server and connected clients. It supports replicating both static values and reactive `Value`/`Computed` objects.
 
@@ -598,7 +598,7 @@ Reaction:await("PlayerData", tostring(localPlayer.UserId))
 -- end)
 ```
 
-## 7. Client-Side Routing (`Chemical.Router`)
+## 7. Client-Side Routing
 
 The `Chemical.Router` is a singleton service for managing client-side application flow by defining paths and associating them with reactive `Chemical.Element`s. When the route changes, corresponding `Element`s are activated or deactivated, typically controlling UI visibility.
 
