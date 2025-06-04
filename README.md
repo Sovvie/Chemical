@@ -410,10 +410,11 @@ Special keys used within the `propertyTable` of `Create` and `Give` to add speci
   * If `propertyName` is a string: Listens to `Instance:GetPropertyChangedSignal(propertyName)`.
     * If `callback` is a function, it's called with the new property value.
       * If `callback` is a `Value`, its `set` method is called with the new property value.
+        * You might use this for TextBox.Text properties, such that when the value of the TextBox changes so too does the reactive Value Object's value.
     * If `propertyName` is a `Value`, `Computed`, or `Element` (reactive object): Creates an `Observer` for this reactive object.
       * If `callback` is a function, it's called when the reactive object changes (receives `newValue, oldValue`).
       * (Using a Value as callback for a reactive propertyName is less common and might imply a two-way binding if not careful, however it is permitted).
-        * You might use this for TextBox.Text properties, such that when the value of the TextBox changes so too does the reactive Value Object's value.
+        
 
 All connections made via these traits are automatically disconnected when the GuiObject they are attached to is destroyed (via `instance:Destroy()` or `Chemical.Destroy()`).
 
