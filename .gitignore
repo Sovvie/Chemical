@@ -1,0 +1,8 @@
+# Project place file
+/*.rbxl
+sourcemap.json*
+# Roblox Studio lock files
+/*.rbxlx.lock
+/*.rbxl.lock
+/.vscode
+/.png
